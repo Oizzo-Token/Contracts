@@ -10,12 +10,14 @@ async function main() {
     }
 
     // Obtain reference to contract and ABI.
-    const DefaultSTXContract = await ethers.getContractFactory("DefaultSTX");
-    console.log("DefaultSTX Contract is deploying to ", network.name);
+    const DefaultOIZZOContract = await ethers.getContractFactory(
+        "DefaultOIZZO"
+    );
+    console.log("DefaultOIZZO Contract is deploying to ", network.name);
 
     //  Deploy logic contract using the proxy pattern.
-    const DefaultSTXContract_ = await upgrades.deployProxy(
-        DefaultSTXContract,
+    const DefaultOIZZOContract_ = await upgrades.deployProxy(
+        DefaultOIZZOContract,
 
         //Since the logic contract has an initialize() function
         // we need to pass in the arguments to the initialize()
@@ -26,12 +28,15 @@ async function main() {
         // as the Hardhat runtime will default to the name 'initialize'
         {initializer: "initialize"}
     );
-    await DefaultSTXContract_.deployed();
-    await fs.writeFileSync(`${dir}/stx-proxy.txt`, DefaultSTXContract_.address);
+    await DefaultOIZZOContract_.deployed();
+    await fs.writeFileSync(
+        `${dir}/oizzo-proxy.txt`,
+        DefaultOIZZOContract_.address
+    );
 
     console.log(
-        "DefaultSTX Contract deployed to:",
-        DefaultSTXContract_.address
+        "DefaultOIZZO Contract deployed to:",
+        DefaultOIZZOContract_.address
     );
 }
 

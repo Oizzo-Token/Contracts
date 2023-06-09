@@ -5,7 +5,7 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20BurnableUpgradeable.sol";
 
-contract DefaultSTX is
+contract DefaultOIZZO is
     OwnableUpgradeable,
     ERC20Upgradeable,
     ERC20BurnableUpgradeable
@@ -16,17 +16,18 @@ contract DefaultSTX is
     address public marketTeamAddress;
 
     uint public taxStartTime;
-    uint public taxPeriodTime = 30;
+    uint public taxPeriodTime;
 
     function initialize(uint256 amount) public initializer {
         __Ownable_init();
         __ERC20Burnable_init();
-        __ERC20_init("STX Token", "STX");
+        __ERC20_init("OIZZO Token", "OIZZO");
 
         _mint(msg.sender, amount * 1e18);
 
         // Set initial tax periods
         taxStartTime = block.timestamp;
+        taxPeriodTime = 30;
     }
 
     function setPoolAddress(address _address) public onlyOwner {

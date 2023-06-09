@@ -5,12 +5,12 @@
     "main": "index.js",
     "scripts": {
         "compile": "npx hardhat compile",
-        "deploy-testnet:default-STX": "npx hardhat run scripts/testnet/default.ts --network polygonMumbai",
-        "deploy-testnet:upgrade-STX": "npx hardhat run scripts/testnet/upgrade.ts --network polygonMumbai",
-        "verify-testnet:STX": "npx hardhat verify --contract contracts/STX.sol:STX --network polygonMumbai",
-        "deploy-mainnet:default-STX": "npx hardhat run scripts/mainnet/default.ts --network polygonMatic",
-        "deploy-mainnet:upgrade-STX": "npx hardhat run scripts/mainnet/upgrade.ts --network polygonMatic",
-        "verify-mainnet:STX": "npx hardhat verify --contract contracts/STX.sol:STX --network polygonMatic",
+        "deploy-testnet:default-OIZZO": "npx hardhat run scripts/testnet/default.ts --network polygonMumbai",
+        "deploy-testnet:upgrade-OIZZO": "npx hardhat run scripts/testnet/upgrade.ts --network polygonMumbai",
+        "verify-testnet:OIZZO": "npx hardhat verify --contract contracts/OIZZO.sol:OIZZO --network polygonMumbai",
+        "deploy-mainnet:default-OIZZO": "npx hardhat run scripts/mainnet/default.ts --network polygonMatic",
+        "deploy-mainnet:upgrade-OIZZO": "npx hardhat run scripts/mainnet/upgrade.ts --network polygonMatic",
+        "verify-mainnet:OIZZO": "npx hardhat verify --contract contracts/OIZZO.sol:OIZZO --network polygonMatic",
         "lint": "prettier --list-different .",
         "format": "prettier --write ."
     },
