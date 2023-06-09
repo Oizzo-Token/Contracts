@@ -1,1 +1,1 @@
-"# nft-contract" 
+"# token-contract"
